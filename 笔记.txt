@@ -1,0 +1,250 @@
+//服务器IP:
+192.168.1.199
+yangzhen
+yz123456
+http://localhost:10293/
+外网前台：
+http://dyx.chekunet.com/Index/Index
+外网后台：
+http://sys.chekunet.com/SystemManage/Login/Login
+sh
+13820857738
+00000000
+fws
+13302034232 abcd1234 服务商
+13820857737 abcd1234
+zf
+13820857737
+abcd1234
+201706
+13302034232	abcd1234
+13612005810   ck123456
+Bug_IP:
+http://192.168.1.199:81
+// lambda
+http://www.cnblogs.com/william-lin/p/3723752.html
+//Demo路径：
+http://localhost:2372/Demo/Demo/index
+http://localhost:2372/Demo/ProDemo/index
+
+//后台路径:
+http://localhost:40448/Home/Index
+
+//IBusinessInfoLogic缺失删除方法：
+Re:        public void Delete(string BusinessId)
+        {
+            Guid Businessid = Guid.Parse(BusinessId);
+            using (var db = new RepositoryBase().BeginTrans())
+            {
+                db.Delete<BusinessInfoEnt>(t => t.C_Id == Businessid);
+                db.Commit();
+            }
+        }
+
+IRe:     void Delete(string Businessid);
+
+Log:        public void Delete(string Businessid)
+        {
+            service.Delete(Businessid);
+        }
+
+ILog:    void Delete(string Businessid);
+
+//重定向：
+return Redirect("/Demo/Demo/Index");   
+
+//mvc 控制器可返回的类型：
+http://www.cnblogs.com/ljl0513/p/4691166.html
+
+// 对象Json化：
+JSON.stringify()
+data: { "PutInData": JSON.stringify(listTemp) },
+
+// 强制浏览器后退刷新页面：
+if (window.name != "bencalie") {
+            location.reload();
+            window.name = "bencalie";
+        } else {
+            window.name = "";
+        }
+其他：http://www.jb51.net/article/94239.htm
+
+
+用户信息：
+
+            BUserLoginEnt entUI = null;
+
+            if (Session[Constes.SESSION_MEMBER] != null)
+            {
+                entUI = Session[Constes.SESSION_MEMBER] as BUserLoginEnt;
+            }
+jq 设置class：
+ $("#ZY").attr("class","fl ck_black_color");”
+
+弹出层layer:
+http://layer.layui.com/
+LAMDA查询
+        public List<CarInfoEnt> GetList()
+        {
+            var expression = ExtLinq.True<CarInfoEnt>();
+            expression = expression.And(t => t.C_State.Equals(1));
+            return service.FindList(expression);
+        }
+
+//可以用前台remove的方法删除，这样就不用拼html了
+$("#"+id).parent().parent().parent().parent().parent().remove();
+
+
+//利用浏览器清除cookies：
+HttpCookie aCookie;
+string cookieName;
+int limit = Request.Cookies.Count;
+for (int i = 0; i < limit; i++)
+{
+cookieName = Request.Cookies[i].Name;
+if (cookieName == "Cookies_CKServiceCheck" || cookieName == "Cookies_CheckPrice")
+{
+aCookie = new HttpCookie(cookieName);
+aCookie.Expires = DateTime.Now.AddDays(-1);
+Response.Cookies.Add(aCookie);
+}                    
+}
+
+今天写了一个视图^^
+
+fileinput文档:
+http://plugins.krajee.com/file-basic-usage-demo
+
+var imgUpURL = 'http://192.168.1.199:8099/ImgHandler.ashx';
+var imgURL = 'http://192.168.1.199:8099';
+
+js 保留两位小数
+http://www.jb51.net/article/45884.htm
+// 保留两位小数
+num = num.toFixed(2);
+
+//jquery根据name属性查找
+$("div[id]") 选择所有含有id属性的div元素 
+$("input[name='keleyicom']") 选择所有的name属性等于'keleyicom'的input元素 
+
+$("input[name!='keleyicom']") 选择所有的name属性不等于'keleyicom'的input元素 
+
+$("input[name^='keleyi']") 选择所有的name属性以'keleyi'开头的input元素 
+$("input[name$='keleyi']") 选择所有的name属性以'keleyi'结尾的input元素 
+$("input[name*='keleyi']") 选择所有的name属性包含'keleyi'的input元素 
+
+$("input[id][name$='keleyi']") 可以使用多个属性进行联合选择，
+该选择器是得到所有的含有id属性并且那么属性以keleyi结尾的元素 
+
+例如：$(":input[name='keleyi']") 表示查找的是name为keleyi的表单。
+转载自柯乐义：http://keleyi.com/a/bjac/01wjh0a0.htm
+
+
+web前端资源：http://www.cnblogs.com/jihua/p/webfront.html
+
+
+// 回调路径
+D:\StartKitwc\CheKuProject\SourceCode\MZ.Framework\CK.PlatformUI\Configs\system.config
+
+
+// 设置a标签hover字体颜色
+onmouseover="this.style.color = '#f78b25';"
+
+
+// y隐藏模态框
+ $('.modal').modal('hide');
+
+
+// 利用父级找子集
+    $('.editTable').on('click', '.shanchu', function () {
+            $(this).parent().parent().remove();
+        })
+http://localhost:10293/DownLoadHandler.ashx?id=@CKServiceOrder.C_Id&type=KZFW&childtype=KZHT
+
+
+// 一般处理程序下载
+http://blog.csdn.net/qq_18316109/article/details/52383784
+
+
+// jq 判断点的是第几个元素
+console.log($(this).parent().parent().parent().index());
+
+
+// double&&decimal
+http://www.cnblogs.com/lovewife/articles/2466543.html
+
+
+// 完美限制textarea字数
+<textarea id="area" name="ss" placeholder="请输入文本内容"></textarea>  
+<p><span id="text-count">20</span>/20</p>  
+<script type="text/javascript">  
+    /*字数限制*/  
+    $("#area").on("input propertychange", function() {  
+        var $this = $(this),  
+            _val = $this.val(),  
+            count = "";  
+        if (_val.length > 20) {  
+            $this.val(_val.substring(0, 20));  
+        }  
+        count = 20 - $this.val().length;  
+        $("#text-count").text(count);  
+    });  
+</script>
+
+
+// 限制input输入内容
+        $(".dj").on("input propertychange", function () {
+            this.value = this.value.replace(/[^\d.]/g, '');
+        });
+
+
+// 获取radio选中的值
+http://blog.csdn.net/htofly/article/details/7721858
+1.获取选中值，三种方法都可以：
+$('input:radio:checked').val()；
+$("input[type='radio']:checked").val();
+$("input[name='rd']:checked").val();
+
+// 获取checkbox选中的值
+            var chk_value = [];
+            $('input[name="SXF"]:checked').each(function () {
+                chk_value.push($(this).val());
+            });
+            alert(chk_value.length == 0 ? '你还没有选择任何内容！' : chk_value);
+
+var text = $("input:checkbox[name='PutCarMan']:checked").map(function (index, elem) {
+                    return $(elem).val();
+                }).get().join(',');
+
+
+手动启动或隐藏模态框。
+$('#myModal').modal('toggle')
+
+手动打开一个模态框。
+$('#myModal').modal('show')
+
+手动隐藏一个模态框。
+$('#myModal').modal('hide')
+
+// ajax
+http://www.cnblogs.com/mingmingruyuedlut/archive/2011/10/18/2216553.html
+
+// 监测代码
+System.Diagnostics.Stopwatch stopwatch = new Stopwatch();
+stopwatch.Start(); //  开始监视代码运行时间
+// 需要测试的代码 ....
+stopwatch.Stop(); //  停止监视
+TimeSpan timespan = stopwatch.Elapsed; //  获取当前实例测量得出的总时间
+double hours = timespan.TotalHours; // 总小时
+double minutes = timespan.TotalMinutes;  // 总分钟
+double seconds = timespan.TotalSeconds;  //  总秒数
+double milliseconds = timespan.TotalMilliseconds;  //  总毫秒数
+
+// linq语句
+http://blog.csdn.net/hb0746/article/details/40123771
+
+// 简析.NET Core 以及与 .NET Framework的关系
+http://blog.csdn.net/zhao1949/article/details/51740559
+32669448+JokerGTA@users.noreply.github.com
+
+https://github.com/JokerGTA/GTA.git
