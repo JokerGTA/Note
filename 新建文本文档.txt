@@ -1,2 +1,5 @@
 Hello Joker!
 ===========
+Watch   => 关注全部动态（Commit/Issues/PRs etc）
+Star    => 收藏/点赞
+Fork    => 复制一份做些改动，以后可以把你的改动回馈给上游。
