@@ -170,3 +170,199 @@ http://blog.csdn.net/zhao1949/article/details/51740559
 // GitHub相关
 32669448+JokerGTA@users.noreply.github.com
 https://github.com/JokerGTA/GTA.git
+// mysql 视图添加变量
+--函数 test_e 
+BEGIN
+return @SSAPI;
+END
+--函数 test_f 
+BEGIN 
+return @HCAPI; 
+END
+--函数 test_sp
+BEGIN
+set @HCAPI = 'http://hc.dev.fanyuanwang.cn';-- 年度保险
+set @SSAPI = 'http://ss.dev.fanyuanwang.cn';-- 员工保障
+select * from v_test;
+END
+--视图 v_test
+(
+SELECT
+`products`.`Id` AS `Id`,
+`products`.`ProductName` AS `ProductName`,
+(
+CASE
+WHEN (
+`producttypes`.`Name` LIKE '%入职体检%'
+) THEN
+'入职体检'
+ELSE
+'年度体检'
+END
+) AS `Type`,
+(
+CASE
+WHEN (
+`producttypes`.`Name` LIKE '%入职体检%'
+) THEN
+2
+ELSE
+1
+END
+) AS `OrderType`,
+(
+CASE
+WHEN (
+`products`.`FyApplyObject` LIKE '%男%'
+) THEN
+'男性'
+WHEN (
+`products`.`FyApplyObject` LIKE '%女%'
+) THEN
+'女性'
+ELSE
+'通用'
+END
+) AS `ApplySex`,
+`producttypes`.`Name` AS `TypeName`,
+(
+CASE
+WHEN (`products`.`Region` = 0) THEN
+'全国'
+WHEN (`products`.`Region` = 1) THEN
+'北京市'
+WHEN (`products`.`Region` = 2) THEN
+'上海市'
+WHEN (`products`.`Region` = 3) THEN
+'深圳市'
+WHEN (`products`.`Region` = 4) THEN
+'广州市'
+WHEN (`products`.`Region` = 5) THEN
+'武汉市'
+WHEN (`products`.`Region` = 6) THEN
+'成都市'
+ELSE
+'其他地区'
+END
+) AS `Region`,
+(
+CASE
+WHEN (
+`producttypes`.`Name` LIKE '%入职体检%'
+) THEN
+concat(
+`test_f` (),
+`producttypes`.`Pictures`
+)
+ELSE
+concat(
+`test_f` (),
+`producttypes`.`Pictures`
+)
+END
+) AS `Pictures`,
+`products`.`RetailPrice` AS `RetailPrice`,
+`products`.`FYUPrice` AS `FYUPrice`,
+`products`.`IsHot` AS `IsHot`,
+`products`.`IsRecommend` AS `IsRecommend`,
+(
+CASE
+WHEN (`products`.`FyIsMarrid` = 0) THEN
+'已婚'
+WHEN (`products`.`FyIsMarrid` = 1) THEN
+'未婚'
+ELSE
+'通用'
+END
+) AS `IsMarrid`,
+`products`.`AddTime` AS `CreateTime`,
+(
+CASE
+WHEN isnull(`products`.`EditTime`) THEN
+`products`.`AddTime`
+ELSE
+`products`.`EditTime`
+END
+) AS `EditTime`,
+`products`.`IsDelete` AS `IsDeleted`,
+`products`.`IsValid` AS `IsValid`
+FROM
+(
+`products`
+JOIN `producttypes` ON (
+(
+`products`.`TypeId` = `producttypes`.`Id`
+)
+)
+)
+)
+UNION
+(
+SELECT
+`ss_products`.`Id` AS `Id`,
+`ss_products`.`ProductName` AS `ProductName`,
+'员工保障' AS `Type`,
+3 AS `OrderType`,
+'通用' AS `ApplySex`,
+`ss_products`.`Type` AS `TypeName`,
+'无' AS `Region`,
+concat(
+`test_e` (),
+`ss_products`.`Picture`
+) AS `Picture`,
+`ss_products`.`RetailPrice` AS `RetailPrice`,
+`ss_products`.`FYUPrice` AS `FYUPrice`,
+`ss_products`.`IsHotSale` AS `IsHot`,
+`ss_products`.`IsHomePage` AS `IsRecommend`,
+'通用' AS `IsMarrid`,
+`ss_products`.`CreateTime` AS `CreateTime`,
+(
+CASE
+WHEN isnull(`ss_products`.`EditTime`) THEN
+`ss_products`.`CreateTime`
+ELSE
+`ss_products`.`EditTime`
+END
+) AS `EditTime`,
+`ss_products`.`IsDeleted` AS `IsDeleted`,
+`ss_products`.`IsValid` AS `IsValid`
+FROM
+`ss_products`
+)
+// 函数添加数据
+-- 函数insert_fg_service_val
+BEGIN
+# 批量添加服务项数据存储过程
+# 参数说明：num_limit--添加条数; rand_limit--随机数最大值(填入10即可);
+# 功能说明：批量添加的服务项数据，其关联的合同及套餐的数据为现有数据随机取出的;
+DECLARE i int default 1;
+DECLARE a int default 1;
+DECLARE b int default 1;
+DECLARE c int default 1;
+DECLARE contractId int default 1;
+DECLARE packageId int default 1;
+DECLARE packagePrice int default 1;
+DECLARE packageCode varchar(64) default '';
+DECLARE packageName varchar(64) default '';
+DECLARE packageType varchar(64) default '';
+DECLARE packagePic varchar(64) default '';
+
+WHILE i<=num_limit do
+ 
+set a = FLOOR(rand()*rand_limit);
+set b = FLOOR(rand()*rand_limit);
+set c = FLOOR(rand()*rand_limit);
+
+SELECT Id INTO contractId from fg_contracts order by rand( ) limit 1;
+SELECT 
+Id,`Code`,`Name`,Price,Type,PictureName INTO packageId,packageCode,packageName,packagePrice,packageType,packagePic 
+from fg_packages order by rand( ) limit 1;
+
+INSERT into benefits_dev.fg_service values (null,DATE(NOW()),NULL,0,contractId,packageId,packageCode,CONCAT(c,b)
+,packageName,packagePrice,0,25,packageType,packagePic);
+
+set i = i + 1;
+ 
+END WHILE;
+ 
+END
