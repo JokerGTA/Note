@@ -199,13 +199,14 @@ END
 BEGIN 
 return @HCAPI; 
 END
---函数 test_sp
+###### 函数 test_sp
 BEGIN
 set @HCAPI = 'http://hc.dev.fanyuanwang.cn';-- 年度保险
 set @SSAPI = 'http://ss.dev.fanyuanwang.cn';-- 员工保障
 select * from v_test;
 END
---视图 v_test
+###### 视图 v_test
+````
 (
 SELECT
 `products`.`Id` AS `Id`,
@@ -349,9 +350,11 @@ END
 FROM
 `ss_products`
 )
+````
 
-# 函数添加数据
--- 函数insert_fg_service_val
+#### 函数添加数据
+###### 函数insert_fg_service_val
+````
 BEGIN
 # 批量添加服务项数据存储过程
 # 参数说明：num_limit--添加条数; rand_limit--随机数最大值(填入10即可);
@@ -383,8 +386,8 @@ INSERT into benefits_dev.fg_service values (null,DATE(NOW()),NULL,0,contractId,p
 ,packageName,packagePrice,0,25,packageType,packagePic);
 
 set i = i + 1;
- 
-END WHILE;
- 
-END
 
+END WHILE; 
+END
+````
+####
