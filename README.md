@@ -139,9 +139,9 @@ http://www.cnblogs.com/lovewife/articles/2466543.html
 
 #### 获取radio选中的值
 http://blog.csdn.net/htofly/article/details/7721858
-1.获取选中值，三种方法都可以：
-`$('input:radio:checked').val()；`
-`$("input[type='radio']:checked").val();`
+1.获取选中值，三种方法都可以:  
+`$('input:radio:checked').val()；`  
+`$("input[type='radio']:checked").val();`  
 `$("input[name='rd']:checked").val();`
 
 #### 获取checkbox选中的值
@@ -154,44 +154,48 @@ http://blog.csdn.net/htofly/article/details/7721858
                     return $(elem).val();  
                 }).get().join(',');
 
-// 手动启动或隐藏模态框。
-$('#myModal').modal('toggle')
+#### 手动启动或隐藏模态框。
+`$('#myModal').modal('toggle')`
 
-// 手动打开一个模态框。
-$('#myModal').modal('show')
+#### 手动打开一个模态框。
+`$('#myModal').modal('show')`
 
-// 手动隐藏一个模态框。
-$('#myModal').modal('hide')
+#### 手动隐藏一个模态框。
+`$('#myModal').modal('hide')`
 
-// ajax
+#### ajax
 http://www.cnblogs.com/mingmingruyuedlut/archive/2011/10/18/2216553.html
 
-// 监测代码
-System.Diagnostics.Stopwatch stopwatch = new Stopwatch();
-stopwatch.Start(); //  开始监视代码运行时间
-// 需要测试的代码 ....
-stopwatch.Stop(); //  停止监视
-TimeSpan timespan = stopwatch.Elapsed; //  获取当前实例测量得出的总时间
-double hours = timespan.TotalHours; // 总小时
-double minutes = timespan.TotalMinutes;  // 总分钟
-double seconds = timespan.TotalSeconds;  //  总秒数
-double milliseconds = timespan.TotalMilliseconds;  //  总毫秒数
+#### 监测代码
+`System.Diagnostics.Stopwatch stopwatch = new Stopwatch();`  
+`stopwatch.Start(); //  开始监视代码运行时间`
 
-// linq语句
+#### 需要测试的代码 ....
+````
+stopwatch.Stop(); //  停止监视  
+TimeSpan timespan = stopwatch.Elapsed; //  获取当前实例测量得出的总时间  
+double hours = timespan.TotalHours; // 总小时  
+double minutes = timespan.TotalMinutes;  // 总分钟  
+double seconds = timespan.TotalSeconds;  //  总秒数  
+double milliseconds = timespan.TotalMilliseconds;  //  总毫秒数
+````
+
+#### linq语句
 http://blog.csdn.net/hb0746/article/details/40123771
 
-// 简析.NET Core 以及与 .NET Framework的关系
+#### 简析.NET Core 以及与 .NET Framework的关系
 http://blog.csdn.net/zhao1949/article/details/51740559
 
-// GitHub相关
-32669448+JokerGTA@users.noreply.github.com
+#### GitHub相关
+32669448+JokerGTA@users.noreply.github.com  
 https://github.com/JokerGTA/GTA.git
-// mysql 视图添加变量
---函数 test_e 
+
+#### mysql 视图添加变量
+###### 函数 test_e 
 BEGIN
 return @SSAPI;
 END
---函数 test_f 
+###### 函数 test_f 
 BEGIN 
 return @HCAPI; 
 END
