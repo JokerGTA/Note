@@ -49,8 +49,6 @@ Response.Cookies.Add(aCookie);
 }                    
 }
 
-今天写了一个视图^^
-
 // fileinput文档:
 http://plugins.krajee.com/file-basic-usage-demo
 var imgUpURL = 'http://192.168.1.199:8099/ImgHandler.ashx';
