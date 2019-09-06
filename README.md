@@ -84,24 +84,25 @@ $("input[name*='keleyi']") 选择所有的name属性包含'keleyi'的input元素
 $("input[id][name$='keleyi']") 可以使用多个属性进行联合选择，  
 该选择器是得到所有的含有id属性并且那么属性以keleyi结尾的元素  
 例如：$(":input[name='keleyi']") 表示查找的是name为keleyi的表单。  
-转载自柯乐义：http://keleyi.com/a/bjac/01wjh0a0.htm
+http://keleyi.com/a/bjac/01wjh0a0.htm
 
-// web前端资源：
+#### web前端资源：
 http://www.cnblogs.com/jihua/p/webfront.html
 
-// 回调路径
+#### 回调路径
 D:\StartKitwc\CheKuProject\SourceCode\MZ.Framework\CK.PlatformUI\Configs\system.config
 
-// 设置a标签hover字体颜色
-onmouseover="this.style.color = '#f78b25';"
+#### 设置a标签hover字体颜色
+`onmouseover="this.style.color = '#f78b25';"`
 
-// y隐藏模态框
- $('.modal').modal('hide');
+#### y隐藏模态框
+ `$('.modal').modal('hide');`
 
-// 利用父级找子集
-    $('.editTable').on('click', '.shanchu', function () {
-            $(this).parent().parent().remove();
-     })
+#### 用父级找子集
+    $('.editTable').on('click', '.shanchu', function () {  
+            $(this).parent().parent().remove();  
+     })  
+     
 http://localhost:10293/DownLoadHandler.ashx?id=@CKServiceOrder.C_Id&type=KZFW&childtype=KZHT
 
 // 一般处理程序下载
