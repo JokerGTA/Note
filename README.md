@@ -12,15 +12,15 @@ JSON.stringify()
 data: { "PutInData": JSON.stringify(listTemp) },  
 ```
 
-# 强制浏览器后退刷新页面：
-(```)
+#### 强制浏览器后退刷新页面：
+```
 if (window.name != "bencalie") {  
             location.reload();  
             window.name = "bencalie";  
         } else {  
             window.name = "";  
         }  
-(```)        
+```        
 其他：http://www.jb51.net/article/94239.htm
 <a href="http://www.jb51.net/article/94239.html">相关文章</a>
 
