@@ -200,10 +200,10 @@ BEGIN
 return @HCAPI; 
 END
 ###### 函数 test_sp
-BEGIN
-set @HCAPI = 'http://hc.dev.fanyuanwang.cn';-- 年度保险
-set @SSAPI = 'http://ss.dev.fanyuanwang.cn';-- 员工保障
-select * from v_test;
+BEGIN  
+set @HCAPI = 'http://hc.dev.fanyuanwang.cn';-- 年度保险  
+set @SSAPI = 'http://ss.dev.fanyuanwang.cn';-- 员工保障  
+select * from v_test;  
 END
 ###### 视图 v_test
 ````
