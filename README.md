@@ -101,20 +101,20 @@ D:\StartKitwc\CheKuProject\SourceCode\MZ.Framework\CK.PlatformUI\Configs\system.
 #### 用父级找子集
     $('.editTable').on('click', '.shanchu', function () {  
             $(this).parent().parent().remove();  
-     })  
-     
+     })       
 http://localhost:10293/DownLoadHandler.ashx?id=@CKServiceOrder.C_Id&type=KZFW&childtype=KZHT
 
-// 一般处理程序下载
+#### 一般处理程序下载
 http://blog.csdn.net/qq_18316109/article/details/52383784
 
-// jq 判断点的是第几个元素
-console.log($(this).parent().parent().parent().index());
+#### jq 判断点的是第几个元素
+`console.log($(this).parent().parent().parent().index());`
 
-// double&&decimal
+#### double&&decimal
 http://www.cnblogs.com/lovewife/articles/2466543.html
 
-// 完美限制textarea字数
+### 完美限制textarea字数
+````
 <textarea id="area" name="ss" placeholder="请输入文本内容"></textarea>  
 <p><span id="text-count">20</span>/20</p>  
 <script type="text/javascript">  
@@ -129,29 +129,29 @@ http://www.cnblogs.com/lovewife/articles/2466543.html
         count = 20 - $this.val().length;  
         $("#text-count").text(count);  
     });  
-</script>
+</script>  
+````
 
-// 限制input输入内容
-        $(".dj").on("input propertychange", function () {
-            this.value = this.value.replace(/[^\d.]/g, '');
+#### 限制input输入内容
+        $(".dj").on("input propertychange", function () {  
+            this.value = this.value.replace(/[^\d.]/g, '');  
         });
 
-// 获取radio选中的值
+#### 获取radio选中的值
 http://blog.csdn.net/htofly/article/details/7721858
 1.获取选中值，三种方法都可以：
-$('input:radio:checked').val()；
-$("input[type='radio']:checked").val();
-$("input[name='rd']:checked").val();
+`$('input:radio:checked').val()；`
+`$("input[type='radio']:checked").val();`
+`$("input[name='rd']:checked").val();`
 
-// 获取checkbox选中的值
-            var chk_value = [];
-            $('input[name="SXF"]:checked').each(function () {
-                chk_value.push($(this).val());
-            });
-            alert(chk_value.length == 0 ? '你还没有选择任何内容！' : chk_value);
-
-var text = $("input:checkbox[name='PutCarMan']:checked").map(function (index, elem) {
-                    return $(elem).val();
+#### 获取checkbox选中的值
+            var chk_value = [];  
+            $('input[name="SXF"]:checked').each(function () {  
+                chk_value.push($(this).val());  
+            });  
+            alert(chk_value.length == 0 ? '你还没有选择任何内容！' : chk_value);  
+            var text = $("input:checkbox[name='PutCarMan']:checked").map(function (index, elem) {  
+                    return $(elem).val();  
                 }).get().join(',');
 
 // 手动启动或隐藏模态框。
