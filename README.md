@@ -1,6 +1,6 @@
 云笔记
 =====
-### MVC重定向：
+#### MVC重定向：
 ` return Redirect("/Demo/Demo/Index"); `
 
 # MVC控制器可返回的类型：
@@ -8,18 +8,18 @@ http://www.cnblogs.com/ljl0513/p/4691166.html
 
 # 对象Json化：
 (```)
-JSON.stringify()
+JSON.stringify()  
 data: { "PutInData": JSON.stringify(listTemp) },
 (```)
 
 # 强制浏览器后退刷新页面：
 (```)
-if (window.name != "bencalie") {
-            location.reload();
-            window.name = "bencalie";
-        } else {
-            window.name = "";
-        }
+if (window.name != "bencalie") {  
+            location.reload();  
+            window.name = "bencalie";  
+        } else {  
+            window.name = "";  
+        }  
 (```)        
 其他：http://www.jb51.net/article/94239.htm
 <a href="http://www.jb51.net/article/94239.html">相关文章</a>
