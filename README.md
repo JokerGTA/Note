@@ -3,14 +3,14 @@
 #### MVC重定向：
 ` return Redirect("/Demo/Demo/Index"); `
 
-# MVC控制器可返回的类型：
+#### MVC控制器可返回的类型：
 http://www.cnblogs.com/ljl0513/p/4691166.html
 
-# 对象Json化：
-(```)
+#### 对象Json化：
+```
 JSON.stringify()  
-data: { "PutInData": JSON.stringify(listTemp) },
-(```)
+data: { "PutInData": JSON.stringify(listTemp) },  
+```
 
 # 强制浏览器后退刷新页面：
 (```)
