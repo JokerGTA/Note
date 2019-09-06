@@ -24,55 +24,55 @@ if (window.name != "bencalie") {
 其他：http://www.jb51.net/article/94239.htm
 <a href="http://www.jb51.net/article/94239.html">相关文章</a>
 
-# jq 设置class：
- $("#ZY").attr("class","fl ck_black_color");”
+#### jq 设置class：
+ `$("#ZY").attr("class","fl ck_black_color");`
 
-# 弹出层layer:
+#### 弹出层layer:
 http://layer.layui.com/
 <a href="http://layer.layui.com/">相关文章</a>
 
-# LAMDA查询:
-(```)
-public List<CarInfoEnt> GetList()
-{
-    var expression = ExtLinq.True<CarInfoEnt>();
-    expression = expression.And(t => t.C_State.Equals(1));
-    return service.FindList(expression);
-}
-(```)
+#### LAMDA查询:
+```
+public List<CarInfoEnt> GetList()  
+{  
+    var expression = ExtLinq.True<CarInfoEnt>();      
+    expression = expression.And(t => t.C_State.Equals(1));      
+    return service.FindList(expression);      
+}  
+```
 
-# 可以用前台remove的方法删除，这样就不用拼html了
+#### 可以用前台remove的方法删除，这样就不用拼html了
 `$("#"+id).parent().parent().parent().parent().parent().remove();`
 
-# 利用浏览器清除cookies：
-(```)
-HttpCookie aCookie;
-string cookieName;
-int limit = Request.Cookies.Count;
-for (int i = 0; i < limit; i++)
-{
-cookieName = Request.Cookies[i].Name;
-if (cookieName == "Cookies_CKServiceCheck" || cookieName == "Cookies_CheckPrice")
-{
-aCookie = new HttpCookie(cookieName);
-aCookie.Expires = DateTime.Now.AddDays(-1);
-Response.Cookies.Add(aCookie);
-}                    
-}
-(```)
+#### 利用浏览器清除cookies：
+```
+HttpCookie aCookie;  
+string cookieName;  
+int limit = Request.Cookies.Count;  
+for (int i = 0; i < limit; i++)  
+{  
+cookieName = Request.Cookies[i].Name;  
+if (cookieName == "Cookies_CKServiceCheck" || cookieName == "Cookies_CheckPrice")  
+{  
+aCookie = new HttpCookie(cookieName);  
+aCookie.Expires = DateTime.Now.AddDays(-1);  
+Response.Cookies.Add(aCookie);  
+}  
+}  
+```
 
-# fileinput文档:
-http://plugins.krajee.com/file-basic-usage-demo
-<a href="http://plugins.krajee.com/file-basic-usage-demo">相关文章</a>
-var imgUpURL = 'http://192.168.1.199:8099/ImgHandler.ashx';
-var imgURL = 'http://192.168.1.199:8099';
+#### fileinput文档:
+http://plugins.krajee.com/file-basic-usage-demo  
+<a href="http://plugins.krajee.com/file-basic-usage-demo">相关文章</a>  
+var imgUpURL = 'http://192.168.1.199:8099/ImgHandler.ashx';  
+var imgURL = 'http://192.168.1.199:8099';  
 
-# js 保留两位小数
-http://www.jb51.net/article/45884.htm
+#### js 保留两位小数
+http://www.jb51.net/article/45884.htm  
 <a href="http://www.jb51.net/article/45884.htm">相关文章</a>
 
-// 保留两位小数
-num = num.toFixed(2);
+#### 保留两位小数
+`num = num.toFixed(2);`
 
 // jquery根据name属性查找
 $("div[id]") 选择所有含有id属性的div元素 
