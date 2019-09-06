@@ -1,6 +1,6 @@
 云笔记
 =====
-# MVC重定向：
+### MVC重定向：
 ` return Redirect("/Demo/Demo/Index"); `
 
 # MVC控制器可返回的类型：
